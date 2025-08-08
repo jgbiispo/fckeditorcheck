@@ -7,15 +7,6 @@ Ferramenta em Python para automatizar a detecção da vulnerabilidade de upload 
 ## Requisitos
 
 * Python 3.x
-* Biblioteca `requests`
-
-Instale a dependência com:
-
-```bash
-pip install requests
-```
-
----
 
 ## Instalação
 
