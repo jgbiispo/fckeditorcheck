@@ -1,4 +1,4 @@
-# FCKEditor Checker
+# FCKEditor ASP Upload Vulnerability Checker
 
 Ferramenta em Python para automatizar a detecção da vulnerabilidade de upload arbitrário de arquivos ASP em servidores que utilizam o componente FCKeditor.
 
@@ -17,10 +17,36 @@ pip install requests
 
 ---
 
-## Uso
+## Instalação
+
+Para facilitar a execução da ferramenta de qualquer lugar no sistema, você pode usar o script `setup.sh` para instalar o comando personalizado.
+
+### Passos:
+
+1. Coloque o arquivo `setup.sh` na mesma pasta do script Python `fckeditor_checker_v0_1.py`.
+
+2. Dê permissão executável para o script de instalação:
 
 ```bash
-python fckeditor_checker_v0_1.py <base_url> [opções]
+chmod +x setup.sh
+```
+
+3. Execute o script de instalação com permissão sudo:
+
+```bash
+sudo ./setup.sh
+```
+
+O comando padrão para executar será `fckupload`.
+
+---
+
+## Uso
+
+Após instalação, execute a ferramenta em qualquer lugar usando:
+
+```bash
+fckupload <base_url> [opções]
 ```
 
 ### Parâmetros
@@ -43,13 +69,13 @@ python fckeditor_checker_v0_1.py <base_url> [opções]
 Testando o alvo `http://example.com/app/` com o parâmetro `Type=Media` (padrão):
 
 ```bash
-python fckeditor_checker_v0_1.py http://example.com/app/
+fckupload http://example.com/app/
 ```
 
 Testando com arquivo personalizado e sem fallback:
 
 ```bash
-python fckeditor_checker_v0_1.py http://example.com/app/ --filename shell.asp --type File --no-follow-fallback
+fckupload http://example.com/app/ --filename shell.asp --type File --no-follow-fallback
 ```
 
 ---
