@@ -1,7 +1,9 @@
 #!/bin/bash
 
-SCRIPT_SRC="./fckeditor_checker_v0_1.py"
+SCRIPT_SRC="./fckeditor.py"
+
 INSTALL_DIR="/usr/local/bin"
+
 CMD_NAME="fckupload"
 
 if [ ! -f "$SCRIPT_SRC" ]; then
@@ -9,9 +11,8 @@ if [ ! -f "$SCRIPT_SRC" ]; then
   exit 1
 fi
 echo "[!] USE COM RESPONSABILIDADE"
-
-echo "[*] Instalando dependência requests via pip (ignorando avisos)..."
-pip3 install --user --upgrade --disable-pip-version-check requests > /dev/null 2>&1
+echo "[*] Instalando dependência requests via pip..."
+pip3 install --upgrade --disable-pip-version-check requests > /dev/null 2>&1
 
 sudo cp "$SCRIPT_SRC" "$INSTALL_DIR/$CMD_NAME.py"
 sudo chmod +x "$INSTALL_DIR/$CMD_NAME.py"
