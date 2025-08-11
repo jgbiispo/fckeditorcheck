@@ -13,6 +13,7 @@ fi
 echo "[!] USE COM RESPONSABILIDADE"
 echo "[*] Instalando dependência requests via pip..."
 pip3 install --upgrade --disable-pip-version-check requests > /dev/null 2>&1
+pip3 install --upgrade --disable-pip-version-check colorama > /dev/null 2>&1
 
 sudo cp "$SCRIPT_SRC" "$INSTALL_DIR/$CMD_NAME.py"
 sudo chmod +x "$INSTALL_DIR/$CMD_NAME.py"
